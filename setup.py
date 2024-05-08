@@ -17,7 +17,7 @@ setup(
   author = 'Trading Economics',
   author_email = 'support@tradingeconomics.com',
   license = 'MIT',
-  url = 'https://github.com/tradingeconomics/tradingeconomics-python', 
+  url = 'https://github.com/RynhAleh/tradingeconomics-python',
   download_url = 'https://github.com/tradingeconomics/tradingeconomics-python/tree/main/dist',
   keywords = ['tradingeconomics', 'data'], 
   classifiers = [ 'Programming Language :: Python :: 3',

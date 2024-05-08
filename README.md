@@ -10,16 +10,15 @@ The Trading Economics Application Python package provides direct access to milli
 ## Installation
 
 
-```bash
-pip install tradingeconomics
-```
-
-Install the latest version directly from GitHub 
+Install the latest version directly from GitHub
 
 ```bash
-git clone https://github.com/tradingeconomics/tradingeconomics-python.git
+git clone https://github.com/RynhAleh/tradingeconomics-python.git
 cd tradingeconomics-python
-python setup.py install
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+python3 flask_app_min/runner.py
 ```
 
 #
