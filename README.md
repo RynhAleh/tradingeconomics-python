@@ -11,9 +11,11 @@ The Trading Economics Application Python package provides direct access to milli
 
 
 Install the latest version directly from GitHub
-
 ```bash
 git clone https://github.com/RynhAleh/tradingeconomics-python.git
+```
+
+```bash
 cd tradingeconomics-python
 python -m venv venv
 source venv/bin/activate
