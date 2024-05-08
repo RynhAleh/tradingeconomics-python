@@ -20,6 +20,9 @@ cd tradingeconomics-python
 python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
+```
+Run a local server and check working:
+```bash
 python3 flask_app_min/runner.py
 ```
 
