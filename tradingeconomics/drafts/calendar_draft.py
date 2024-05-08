@@ -3,8 +3,8 @@ import urllib
 import pandas as pd
 import sys
 from datetime import *
-from . import functions as fn
-from . import glob
+# from . import functions as fn
+# from . import glob
 from tradingeconomics import functions as fn #remove before deploy
 from tradingeconomics import glob #remove before deploy
 import ssl

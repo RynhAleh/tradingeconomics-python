@@ -178,7 +178,7 @@ class TestgetCalendarData(unittest.TestCase):
     def test_getCalendarDataCategory(self):
         a = te.getCalendarData(category = 'inflation rate', output_type = 'df')
 
-        url = f'https://api.tradingeconomics.com/calendar/indicator/inflation rate?c=guest:guest'
+        url = f'https://api.tradingeconomics.com/calendar/indicator/inflation%20rate?c=guest:guest'
         data = requests.get(url).json()
 
         b = pd.DataFrame.from_dict(data, orient='columns')
@@ -194,7 +194,7 @@ class TestgetCalendarData(unittest.TestCase):
     def test_getCalendarDataCategoryWithImportance(self):
         a = te.getCalendarData(category = 'inflation rate', importance = '3', output_type = 'df')
 
-        url = f'https://api.tradingeconomics.com/calendar/indicator/inflation rate?c=guest:guest&importance=3'
+        url = f'https://api.tradingeconomics.com/calendar/indicator/inflation%20rate?c=guest:guest&importance=3'
         data = requests.get(url).json()
 
         b = pd.DataFrame.from_dict(data, orient='columns')
@@ -210,7 +210,7 @@ class TestgetCalendarData(unittest.TestCase):
     def test_getCalendarDataCategoryWithDates(self):
         a = te.getCalendarData(category = 'inflation rate', initDate='2016-03-01', endDate='2016-03-03', output_type = 'df')
 
-        url = f'https://api.tradingeconomics.com/calendar/indicator/inflation rate/2016-03-01/2016-03-03?c=guest:guest'
+        url = f'https://api.tradingeconomics.com/calendar/indicator/inflation%20rate/2016-03-01/2016-03-03?c=guest:guest'
         data = requests.get(url).json()
 
         b = pd.DataFrame.from_dict(data, orient='columns')
@@ -226,7 +226,7 @@ class TestgetCalendarData(unittest.TestCase):
     def test_getCalendarDataCategoryWithDatesAndImportance(self):
         a = te.getCalendarData(category = 'inflation rate', initDate='2016-03-01', endDate='2016-03-03', importance = '3', output_type = 'df')
 
-        url = f'https://api.tradingeconomics.com/calendar/indicator/inflation rate/2016-03-01/2016-03-03?c=guest:guest&importance=3'
+        url = f'https://api.tradingeconomics.com/calendar/indicator/inflation%20rate/2016-03-01/2016-03-03?c=guest:guest&importance=3'
         data = requests.get(url).json()
 
         b = pd.DataFrame.from_dict(data, orient='columns')

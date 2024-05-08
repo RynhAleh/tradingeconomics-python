@@ -13,43 +13,43 @@ te.login('guest:guest')
 
 # To get the list of Credit Ratings by country.
 mydata = te.getRatings(output_type='df')
-print(mydata)
-print("===============================================================================================================")
+print(mydata.to_html()) if mydata is not None else None
+print("==============================================================================================================1")
 
 # To get the credit rating data by specific country
 mydata = te.getRatings(country='mexico', output_type='df')
-print(mydata)
-print("===============================================================================================================")
+print(mydata.to_html()) if mydata is not None else None
+print("==============================================================================================================2")
 
 # To get the credit rating data by multiple countries
 mydata = te.getRatings(country=['mexico', 'sweden'], output_type='df')
-print(mydata)
-print("===============================================================================================================")
+print(mydata.to_html()) if mydata is not None else None
+print("==============================================================================================================3")
 
 # To get the historical credit rating data for specific country
 mydata = te.getHistoricalRatings(country='mexico', output_type='df')
-print(mydata)
-print("===============================================================================================================")
+print(mydata.to_html()) if mydata is not None else None
+print("==============================================================================================================4")
 
 # To get the historical credit rating data for multiple countries
 mydata = te.getHistoricalRatings(country=['mexico', 'sweden'], output_type='df')
-print(mydata)
-print("===============================================================================================================")
+print(mydata.to_html()) if mydata is not None else None
+print("==============================================================================================================5")
 
 # To get the historical credit rating data for specific country by start date
 mydata = te.getHistoricalRatings(country='mexico', initDate='2010-08-01', output_type='df')
-print(mydata)
-print("===============================================================================================================")
+print(mydata.to_html()) if mydata is not None else None
+print("==============================================================================================================6")
 
 # To get the historical credit rating data specific country by start and end date
 mydata = te.getHistoricalRatings(country='mexico', initDate='2010-08-01', endDate='2012-01-01', output_type='df')
-print(mydata)
-print("===============================================================================================================")
+print(mydata.to_html()) if mydata is not None else None
+print("==============================================================================================================7")
 
 # To get your data into a csv file
-df = pd.DataFrame(mydata)
-path = r'python\EXAMPLES\Indicators\creditRating.csv'
-df.to_csv(path, index=False, header=True, sep='|')
+# df = pd.DataFrame(mydata)
+# path = r'python\EXAMPLES\Indicators\creditRating.csv'
+# df.to_csv(path, index=False, header=True, sep='|')
 
 # If you want the code into an html table format, you can use the example below in your html projects
 # print(mydata.to_html())

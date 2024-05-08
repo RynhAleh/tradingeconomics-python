@@ -9,17 +9,17 @@ te.login('guest:guest')
 
 # To list of categories available.
 mydata = te.getSearch(output_type='df')
-print(mydata)
+print(mydata.to_html())
 print("===============================================================================================================")
 
 # To search for term/keyword by category.
 mydata = te.getSearch(term='japan', category='markets', output_type='df')
-print(mydata)
+print(mydata.to_html())
 print("===============================================================================================================")
 
 # To search for term/keyword in all categories available.
 mydata = te.getSearch(term='gold', output_type='df')
-print(mydata)
+print(mydata.to_html())
 print("===============================================================================================================")
 
 # To get your data into a csv file

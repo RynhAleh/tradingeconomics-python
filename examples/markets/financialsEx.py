@@ -32,7 +32,7 @@ print(mydata)
 print("===============================================================================================================")
 
 # To get historical financials data by instrument symbol.
-mydata = te.getHistoricalFinancials('aapl:us', category='assets', output_type='df')
+mydata = te.getFinancialsHistorical('aapl:us', category='assets', output_type='df')
 print(mydata)
 print("===============================================================================================================")
 

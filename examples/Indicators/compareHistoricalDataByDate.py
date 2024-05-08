@@ -33,12 +33,13 @@ def compareHistoricalDataByDate(country=None, indicator=None, initDate=None, end
 
     #API request
     data = te.getHistoricalData(country=country, indicator=indicator, initDate=initDateMinusYear, endDate=endDate, output_type='raw')
-    
-    #Filtering the dates
-    dataYear1 = list(filter(lambda x:True if x['DateTime'] >= initDate else False,data))
-    dataYear2 = list(filter(lambda x:True if x['DateTime'] >= initDateMinusYear and x['DateTime'] <= endDateMinusYear else False, data))
+    if not data is None:
+        #Filtering the dates
+        dataYear1 = list(filter(lambda x:True if x['DateTime'] >= initDate else False, data))
+        dataYear2 = list(filter(lambda x:True if x['DateTime'] >= initDateMinusYear and x['DateTime'] <= endDateMinusYear else False, data))
+        return [pd.DataFrame(dataYear1), pd.DataFrame(dataYear2)]
+    else:
+        return None
 
-    return [pd.DataFrame(dataYear1), pd.DataFrame(dataYear2)]
-
-mydata = compareHistoricalDataByDate(country='brazil', indicator='currency', initDate='2022-07-01', year=1, output_type='df')
+mydata = compareHistoricalDataByDate(country='russia', indicator='currency', initDate='2020-07-01', year=1, output_type='df')
 print(mydata)

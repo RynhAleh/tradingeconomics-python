@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <div></div>
+        <div id="main">
+            Go to this task on my <a href="https://workinplus.pythonanywhere.com/tsk6/">https://workinplus.pythonanywhere.com/</a> (Django)
+            <h3>TRADING ECONOMICS <a href="https://tradingeconomics.com/">https://tradingeconomics.com/</a></h3>
+            (using access to <a href="https://brains.tradingeconomics.com/v2/search/wb,fred,comtrade?q=nigeria&pp=50&p=0&_=1557934352427&stance=2)">https://brains.tradingeconomics.com/v2/search/wb,fred,comtrade?q=nigeria&pp=50&p=0&_=1557934352427&stance=2)</a>
+            <form style="margin: 10px 0 10px 0">
+                <label for="pages-select">Show records:</label>
+                    <select name="pages" id="pages-select">
+                        {% for val in from_pages %}
+                        <option value={{ val }} {% if val|int == pages|int %} selected{% endif %}>{{ val }}</option>
+                        {% endfor %}
+                    </select>
+                <label for="flt-field">Filter:</label>
+                <input name="flt" id="flt-field" value="{{ flt }}" style="width:18em;">
+                <button>Get data</button>
+                Found records: {{ hits }}
+            </form>
+            <div id="tab-block">
+            {% if head_list1 and values_list1 %}
+                <table><tr class="tab-header">
+                    {% for key in head_list1 %}
+                        <th>{{ key }}</th>
+                    {% endfor %}
+                    {% for row in values_list1 %}
+                        <tr style="background-color:{{ loop.cycle('white', '#f4f5f7;') }}">
+                        {% for val in row %}
+                            <td>{{ val }}</td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </table>
+                {% else %}
+                <h3>(no statistics for this request)</h3>
+            {% endif %}
+            {% if head_list2 and values_list2 %}
+                <table><tr class="tab-header">
+                    {% for key in head_list2 %}
+                        <th>{{ key }}</th>
+                    {% endfor %}
+                    {% for row in values_list2 %}
+                        <tr style="background-color:{{ loop.cycle('white', '#f4f5f7;') }}">
+                        {% for val in row %}
+                            <td>{{ val }}</td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </table>
+            {% else %}
+            <h3>(no data for this request)</h3>
+            {% endif %}
+            </div>
+        </div>
+        <div></div>
+    </main>
+</body>
+</html>
